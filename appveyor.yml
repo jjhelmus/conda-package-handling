@@ -39,8 +39,8 @@ install:
   - conda update -q --all
   - conda install -q pytest pytest-cov pytest-mock conda-build anaconda-client
 
-  # Needed for building extensions in python2.7 x64 with cmake.
-  - conda install --channel conda-forge vs2008_express_vc_python_patch
+  # Needed for building python2.7 x64 extensions with conda-build
+  - conda install -c defaults -c conda-forge vs2008_express_vc_python_patch
   - call setup_x64
 
   - conda info
