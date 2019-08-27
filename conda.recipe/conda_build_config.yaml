@@ -1,2 +1,2 @@
-c_compiler:
-  - vs2015
+c_compiler:  # [win and not py27]
+  - vs2015   # [win and not py27]
