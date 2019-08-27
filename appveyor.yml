@@ -1,5 +1,3 @@
-image: Visual Studio 2017
-
 environment:
   global:
     # SDK v7.0 MSVC Express 2008's SetEnv.cmd script will fail if the
@@ -8,9 +6,9 @@ environment:
     CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\tools\\appveyor\\run_with_env.cmd"
 
   matrix:
-    - PYTHON: "C:\\Miniconda36-x64"
-      PYTHON_VERSION: "3.6"
-      PYTHON_ARCH: "64"
+    #- PYTHON: "C:\\Miniconda36-x64"
+    #  PYTHON_VERSION: "3.6"
+    #  PYTHON_ARCH: "64"
 
     - PYTHON: "C:\\Miniconda-x64"
       PYTHON_VERSION: "2.7"
@@ -40,6 +38,11 @@ install:
   - conda config --set auto_update_conda no
   - conda update -q --all
   - conda install -q pytest pytest-cov pytest-mock conda-build anaconda-client
+
+  # Needed for building extensions in python2.7 x64 with cmake.
+  - conda install --channel conda-forge vs2008_express_vc_python_patch
+  - call setup_x64
+
   - conda info
   # this is to ensure dependencies
   - conda build conda.recipe --no-test
