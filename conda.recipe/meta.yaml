@@ -36,7 +36,7 @@ outputs:
         # Does not work in this recips at present
         # we manually convert C99 to C89 instead.
         # - c99-to-c89  # [win and vc<14]
-        - msinttypes  # [win and vc<14]
+        - msinttypes  r26 h7e1a5f4_2 # [win and vc<14]
         - autoconf    # [unix]
         - automake    # [unix]
         - libtool     # [unix]
@@ -45,7 +45,7 @@ outputs:
         - make        # [unix]
         - m2-patch    # [win]
       host:
-        - msinttypes  # [win and vc<14]
+        - msinttypes  r26 h7e1a5f4_2 # [win and vc<14]
         - bzip2
         - libiconv    # [osx]
         - zlib
