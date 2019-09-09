@@ -41,7 +41,7 @@ outputs:
         - automake    # [unix]
         - libtool     # [unix]
         - pkg-config  # [unix]
-        - cmake       # [win]
+        - cmake 3.14.0 h33f27b4_0 # [win]
         - make        # [unix]
         - m2-patch    # [win]
       host:
