@@ -40,7 +40,7 @@ set C99_TO_C89_CONV_DEBUG_LEVEL=1
 :skip_c99_wrap
 :: set cflags because NDEBUG is set in Release configuration, which errors out in test suite due to no assert
 
-cmake -G "Ninja" ^
+cmake -G "%CMAKE_GENERATOR" ^
       -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" ^
       %COMPILER% ^
       -DCMAKE_BUILD_TYPE=Release ^
@@ -78,10 +78,7 @@ cmake -G "Ninja" ^
 :build
 
 :: Build.
-:: jom -j%CPU_COUNT% VERBOSE=1
-ninja -j%CPU_COUNT% -v
-if errorlevel 1 exit /b 1
-ninja install
+cmake --build . --target install --config Release
 if errorlevel 1 exit /b 1
 
 :: Test.

@@ -43,7 +43,6 @@ outputs:
         - pkg-config  # [unix]
         - cmake       # [win]
         - make        # [unix]
-        - ninja       # [win]
         - m2-patch    # [win]
       host:
         - msinttypes  # [win and vc<14]
