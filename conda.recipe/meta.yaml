@@ -46,7 +46,7 @@ outputs:
         - m2-patch    # [win]
       host:
         - msinttypes  r26 h7e1a5f4_2 # [win and vc<14]
-        - bzip2
+        - bzip2 1.0.8 h0c8e037_0
         - libiconv    # [osx]
         - zlib 1.2.11 h3cc03e0_3
         - zstd 1.3.7 h1b0e4d7_0
