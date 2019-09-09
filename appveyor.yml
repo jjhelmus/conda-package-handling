@@ -45,7 +45,7 @@ install:
 
   - conda info
   # this is to ensure dependencies
-  - conda build conda.recipe --no-test
+  - conda build -c conda-forge conda.recipe --no-test
   - conda install --use-local conda-package-handling
 
 
